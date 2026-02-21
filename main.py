@@ -53,15 +53,14 @@ def main():
 
         for asteroid in asteroids:
             for shot in shots:
-                #print (f"Checking collision between asteroid at {asteroid.position} with radius {asteroid.radius} and shot at {shot.position} with radius {shot.radius}")
-                if asteroid.collide_with(shot):
+               if asteroid.collide_with(shot):
                     log_event("asteroid_shot")
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill() 
 
                    
             
- 
+   
         screen.fill("black")
 
         for obj in drawable:
